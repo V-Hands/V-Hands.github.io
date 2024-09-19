@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>V-Hands</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:image" content="https://V-Hands.github.io/img/results.jpg">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="2346">
+    <meta property="og:image:height" content="1086">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://V-Hands.github.io/"/>
+    <meta property="og:title" content="Touchscreen-based Hand Tracking for Remote Whiteboard Interaction" />
+    <meta property="og:description" content="In whiteboard-based remote communication, the seamless integration of drawn content and hand-screen interactions is essential for an immersive user experience. Previous methods either require bulky device setups for capturing hand gestures or fail to accurately track the hand poses from capacitive images. In this paper, we present a real-time method for precise tracking 3D poses of both hands from capacitive video frames. To this end, we develop a deep neural network to identify hands and infer hand joint positions from capacitive frames, and then recover 3D hand poses from the hand-joint positions via a constrained inverse kinematic solver. Additionally, we design a device setup for capturing high-quality hand-screen interaction data and obtained a more accurate synchronized capacitive video and hand pose dataset. Our method improves the accuracy and stability of 3D hand tracking for capacitive frames while maintaining a compact device setup for remote communication. We validate our scheme design and its superior performance on 3D hand pose tracking and demonstrate the effectiveness of our method in whiteboard-based remote communication." />
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💫</text></svg>">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+    
+    <script src="js/app.js"></script>
+</head>
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h2 class="col-md-12 text-center">
+                <b>V-Hands</b>: Touchscreen-based Hand Tracking <br> for Remote Whiteboard Interaction </br> 
+                <small>
+								UIST 2024
+                </small>
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li>
+                        Xinshuang Liu
+                        </br>UC San Diego
+                    </li>
+                    <li>
+                        Yizhong Zhang
+                        </br>Microsoft Research Asia
+                    </li>
+                    <li>
+                        Xin Tong
+                        </br>Microsoft Research Asia
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="row">
+                <div class="col-md-6 col-md-offset-3 text-center">
+                    <ul class="nav nav-pills nav-justified">
+                        <li>
+                            <!-- <a href="TODO"> -->
+                            <image src="img/paper.jpg" height="60px">
+                                <h4><strong>Paper</strong></h4>
+                            </a>
+                        </li>
+                        <li>
+                            <!-- <a href="https://youtu.be/pVVQZ_3k2qs"> -->
+                            <image src="img/youtube_icon.png" height="60px">
+                                <h4><strong>Video</strong></h4>
+                            </a>
+                        </li>
+                        <li>
+                            <!-- <a href="https://TODO"> -->
+                                <image src="img/database_icon.png" height="60px">
+                                <h4><strong>Dataset</strong></h4>
+                            </a>							
+                        </li>
+                        <li>
+                            <!-- <a href="https://github.com/TODO-"> -->
+                            <image src="img/github.png" height="60px">
+                                <h4><strong>Code</strong></h4>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-center">
+                <image src="img/results.jpg" style="width: 100%; height: auto;"></image>
+			</div>
+            <div class="col-md-8 col-md-offset-2">
+							<p class="text-center">
+                                Given the capacitive frames of two hands of a subject interacting with the touchscreen (first row), our method reconstructs the corresponding 3D hand poses (second row) in real time.
+							</p>
+						</div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Abstract
+                </h3>
+                <p class="text-justify">
+                    In whiteboard-based remote communication, the seamless integration of drawn content and hand-screen interactions is essential for an immersive user experience. Previous methods either require bulky device setups for capturing hand gestures or fail to accurately track the hand poses from capacitive images. In this paper, we present a real-time method for precise tracking 3D poses of both hands from capacitive video frames. To this end, we develop a deep neural network to identify hands and infer hand joint positions from capacitive frames, and then recover 3D hand poses from the hand-joint positions via a constrained inverse kinematic solver. Additionally, we design a device setup for capturing high-quality hand-screen interaction data and obtained a more accurate synchronized capacitive video and hand pose dataset. Our method improves the accuracy and stability of 3D hand tracking for capacitive frames while maintaining a compact device setup for remote communication. We validate our scheme design and its superior performance on 3D hand pose tracking and demonstrate the effectiveness of our method in whiteboard-based remote communication. 
+                </p>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Video
+                </h3>
+                <div class="text-center">
+                    <div style="position:relative;padding-top:56.25%;">
+                        <iframe src="https://youtu.be/4KH9KfOW_8Q" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Citation
+                </h3>
+                <div class="form-group col-md-10 col-md-offset-1">
+                    <textarea id="bibtex" class="form-control" readonly>
+@article{liu2024Touchscreen,
+    title={Touchscreen-based Hand Tracking for Remote Whiteboard Interaction},
+    author={Xinshuang Liu and Yizhong Zhang and Xin Tong},
+    journal={UIST},
+    year={2024}
+}</textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Acknowledgements
+                </h3>
+                <p class="text-justify">
+                    The website template was borrowed from <a href="http://mgharbi.com/">Michaël
+                    Gharbi</a> and <a href="https://jonbarron.info/mipnerf360/">MipNeRF360</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
